@@ -1,10 +1,10 @@
-import Navbar from "./components/Navbar.jsx";
+import NavBar from "./components/NavBar.jsx";
 import ItemListContainer from "./components/ItemListContainer.jsx";
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <Navbar />
+      <NavBar />
       <ItemListContainer/>
     </div>
   );

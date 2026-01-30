@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CartWidget from './Cartwidget.jsx'; 
 
-export default function Navbar() {
+export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
