@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CartWidget from './Cartwidget.jsx'; 
+import CartWidget from './CartWidget.jsx'; 
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
