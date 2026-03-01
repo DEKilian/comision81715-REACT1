@@ -1,14 +1,15 @@
 function Item ({ item }) {
-    return (<div className="card bg-base-100 shadow-sm">
+    return (<div className="card bg-base-100 shadow-sm border border-primary">
           <figure>
             <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt={item.nombre}
-            />
+              src={item.thumbnail}
+              alt={item.title} />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">{item.nombre}</h2>
-            <p>{item.descripcion}</p>
+            <h2 className="card-title">{item.title}</h2>
+            <p>{item.description}</p>
+            <p>stock: {item.stock}</p>
+            <p>precio: {item.price}</p>
             <div className="card-actions justify-end">
               <button className="btn btn-primary">Ver más</button>
             </div>
