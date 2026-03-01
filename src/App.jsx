@@ -3,7 +3,7 @@ import ItemListContainer from "./components/ItemListContainer.jsx";
 
 function App() {
   return (
-    <div>
+    <div className="bg-pink-200 min-h-screen">
       <NavBar />
       <ItemListContainer/>
     </div>
