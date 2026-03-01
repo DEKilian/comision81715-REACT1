@@ -1,3 +1,5 @@
+import ItemCount from "./ItemCount"
+
 function ItemDetail ({ item }) {
     return (  
     <div className="card lg:card-side bg-base-100 shadow-sm">
@@ -12,7 +14,7 @@ function ItemDetail ({ item }) {
                 <p>stock: {item.stock}</p>
                 <p>{item.description}</p>
                 <div className="card-actions justify-end">
-                <button className="btn btn-primary">Agregar al carrito</button>
+                 <ItemCount />
                 </div>
             </div>
         </div>
