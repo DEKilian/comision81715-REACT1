@@ -2,7 +2,7 @@ import ItemCount from "./ItemCount"
 
 function ItemDetail ({ item }) {
     return (  
-    <div className="card lg:card-side bg-base-100 shadow-sm">
+    <div className="card lg:card-side !bg-pink-100 shadow-sm">
             <figure>
                 <img
                     src={item.thumbnail}

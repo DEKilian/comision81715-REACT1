@@ -3,7 +3,7 @@ import { useNavigate } from "react-router"
 function Item ({ item }) {
   const navigate = useNavigate()
     return (
-      <div className="card bg-base-100 shadow-sm border border-primary">
+      <div className="card !bg-pink-100 shadow-sm border border-primary">
           <figure>
             <img
               src={item.thumbnail}
