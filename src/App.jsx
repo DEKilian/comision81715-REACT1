@@ -1,11 +1,9 @@
-import NavBarContainer from "./components/NavBarContainer.jsx";
-import ItemListContainer from "./components/ItemListContainer.jsx";
+import AppRouter from "./router/AppRouter.jsx";
 
 function App() {
   return (
     <div className="bg-pink-200 min-h-screen">
-      <NavBarContainer />
-      <ItemListContainer/>
+      <AppRouter />
     </div>
   );
 }
