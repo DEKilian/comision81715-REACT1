@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ItemList from './ItemList'
 
 const products = [
   {
@@ -47,8 +48,7 @@ function ItemListContainer() {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    const getItems = () =>
-      new Promise((res) => {
+    const getItems = () => new Promise((res,rej) => {
         setTimeout(() => {
           res(products)
         }, 3000)
@@ -57,31 +57,8 @@ function ItemListContainer() {
     getItems().then(data => setItems(data))
   }, [])
 
-  // Mensaje mientras carga
-  if (items.length === 0) {
-    return <h2>Cargando productos...</h2>
-  }
-
   return (
-    <div>
-      {items.map(item => (
-        <div key={item.id} className="card bg-base-100 w-96 shadow-sm">
-          <figure>
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-              alt={item.nombre}
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">{item.nombre}</h2>
-            <p>{item.descripcion}</p>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Ver más</button>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
+    <ItemList items={items} />
   );
 }
 
