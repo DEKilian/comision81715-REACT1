@@ -1,27 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-function ItemCount () {
+function ItemCount ({ item }) {
     const [count, setCount] = useState(1)
-
-    useEffect(() => {
-        console.log('se ejecuto el efecto')
-
-        return () => {
-            console.log('se desmonto')
-        }
-    }, [count])
-
-
+    const { addToCart } = useContext(CartContext)
 
 const handleSumar = () => setCount(count + 1)
 const handleRestar = () => setCount(count - 1)
+
+const handleAddToCart = () => {
+    addToCart({...item, count})
+}
 
 return (
     <div>
         <p>{count}</p>
         <button className="btn"onClick={handleSumar}>Sumar</button>
-        <button className="btn"onClick={handleRestar}>Restar</button>
-    </div>
+        <button 
+        className="btn"
+        onClick={handleRestar}
+        disabled={count===1}
+        >
+            Restar
+        </button>
+        <button className="btn btn-outline" onClick={handleAddToCart}>agregar al carrito</button>
+     </div>
     )
 }
 

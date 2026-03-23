@@ -14,7 +14,7 @@ function ItemDetail ({ item }) {
                 <p>stock: {item.stock}</p>
                 <p>{item.description}</p>
                 <div className="card-actions justify-end">
-                 <ItemCount />
+                 <ItemCount item={item} />
                 </div>
             </div>
         </div>

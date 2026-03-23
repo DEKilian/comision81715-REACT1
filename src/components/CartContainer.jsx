@@ -1,8 +1,11 @@
+import { useCart } from "../custom-hooks/useCart"
+import CartList from "./CartList"
+
 function CartContainer () {
+    const { cart } = useCart()
+
     return (
-        <div>
-            <h2> Cart Container</h2>
-        </div>
+        <CartList cart={cart} />
     )
 }
 
