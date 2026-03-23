@@ -7,13 +7,12 @@ function Item ({ item }) {
           <figure>
             <img
               src={item.thumbnail}
-              alt={item.title} />
+              alt={item.name} />
           </figure>
           <div className="card-body">
-            <h2 className="card-title">{item.title}</h2>
+            <h2 className="card-title">{item.name}</h2>
             <p>{item.description}</p>
-            <p>stock: {item.stock}</p>
-            <p>precio: {item.price}</p>
+            <p>precio: ${item.price}</p>
             <div className="card-actions justify-end">
               <button 
                 onClick={() => navigate(`/item/${item.id}`)}
