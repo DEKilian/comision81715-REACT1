@@ -1,4 +1,13 @@
-import { doc, getDoc, getFirestore, collection, getDocs, query, where } from "firebase/firestore";
+import { 
+    addDoc, 
+    doc, 
+    getDoc, 
+    getFirestore, 
+    collection,
+    getDocs, 
+    query, 
+    where 
+} from "firebase/firestore";
 import { app } from "./config";
 
 const db = getFirestore(app);
@@ -52,4 +61,10 @@ export const getDetail = async (id) => {
     } else {
     console.log("No Existe ese Documento");
     }
+}
+
+
+export const createOrder = async (order) => {
+const docRef = await addDoc(collection(db, "orders"), order)
+console.log("Document written with ID: ", docRef.id);
 }
