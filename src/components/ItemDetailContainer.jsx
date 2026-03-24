@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router";
 import { getDetail } from "../firebase/db";
 import ItemDetail from "./ItemDetail";
+import Loader from "./Loader";
 
 function ItemDetailContainer () {
     const [item, setItem] = useState ()
@@ -12,14 +13,10 @@ function ItemDetailContainer () {
         .then(detail => setItem(detail))
     }, [id])
 
-    if (!item) {
-        return(
-            <div>cargando....</div>
-        )
-    }
-
     return (
-        <ItemDetail item={item} />
+        <>
+        {!item ? <Loader/> : <ItemDetail item={item} />}
+        </>
     )
 }
 

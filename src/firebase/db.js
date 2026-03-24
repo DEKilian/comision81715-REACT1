@@ -9,6 +9,7 @@ import {
     where 
 } from "firebase/firestore";
 import { app } from "./config";
+import toast from "react-hot-toast"
 
 const db = getFirestore(app);
 
@@ -64,7 +65,9 @@ export const getDetail = async (id) => {
 }
 
 
-export const createOrder = async (order) => {
+export const createOrder = async (order, clearCart, navigate) => {
 const docRef = await addDoc(collection(db, "orders"), order)
-console.log("Document written with ID: ", docRef.id);
+toast(`Muchas gracias por comprar con nosotros. El ID de tu orden de compra es: ${docRef.id}`)
+clearCart()
+navigate('/')
 }

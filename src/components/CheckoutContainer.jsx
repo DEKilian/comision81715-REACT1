@@ -1,12 +1,16 @@
 import { useCart } from "../custom-hooks/useCart"
 import { serverTimestamp } from "firebase/firestore"
 import { createOrder } from "../firebase/db"
+import { useNavigate } from "react-router"
 
 function CheckoutContainer () {
-    const { cart, getCartTotal } = useCart()
+    const { cart, getCartTotal, clearCart } = useCart()
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if(!cart.length) return
 
         const form = e.target
         const email = form.email.value
@@ -19,7 +23,7 @@ function CheckoutContainer () {
             items: cart,
             total: getCartTotal(),
             time: serverTimestamp()
-        })
+        }, clearCart, navigate)
 
     }
 

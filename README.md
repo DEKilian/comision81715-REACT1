@@ -2,7 +2,7 @@
 
 Aplicación web desarrollada con React y Vite que simula un e-commerce enfocado en la venta de flores, árboles y semillas.
 
-Este proyecto fue realizado como trabajo práctico para el curso de React JS de Coderhouse, comision 81715.
+Este proyecto fue realizado como trabajo práctico para el curso de React Javascript de Coderhouse, comision 81715.
 
 ---
 
@@ -50,5 +50,6 @@ A continuación, las principales librerías utilizadas en el proyecto:
 - [React DOM](https://react.dev/reference/react-dom)
 - [React Router](https://reactrouter.com/)
 - [React Router DOM](https://reactrouter.com/en/main)
-
+- [React Spinners](https://www.davidhu.io/react-spinners/)
+- [React Hot Toast](https://react-hot-toast.com/)
 ---
