@@ -11,7 +11,6 @@ function ItemDetail ({ item }) {
             <div className="card-body">
                 <h2 className="card-title">{item.title}</h2>
                 <h3>${item.price} </h3>
-                <p>stock: {item.stock}</p>
                 <p>{item.description}</p>
                 <div className="card-actions justify-end">
                  <ItemCount item={item} />
