@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CartWidget from './CartWidget.jsx'; 
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 export default function NavBar({ categories }) {
   const [open, setOpen] = useState(false); 
@@ -24,7 +24,7 @@ export default function NavBar({ categories }) {
 
             {open && (
               <ul className="absolute top-full mt-2 bg-pink-100 text-pink-900 rounded shadow w-96 left-1/2 transform -translate-x-1/2 z-50">
-                {categories.map(cat => <li key={cat}><Link to={`/category/${cat}`} >{cat}</Link></li>)}
+                {categories.map(cat => <li key={cat}><NavLink className={({ isActive }) => isActive ? "bg-red-400" : ""} to={`/category/${cat}`} >{cat}</NavLink></li>)}
               </ul>
             )}
 
