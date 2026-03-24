@@ -4,7 +4,7 @@ import CartList from "./CartList";
 import toast from "react-hot-toast";
 
 function CartContainer() {
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart();
   const navigate = useNavigate();
 
   const handleCheckout = () => {
@@ -16,14 +16,27 @@ function CartContainer() {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center gap-4">
       <CartList cart={cart} />
-      <button 
-        className="btn btn-success w-1/2"
-        onClick={handleCheckout}
-      >
-        Ir a Checkout
-      </button>
+
+      <div className="flex gap-4">
+        <button 
+          className="btn btn-success"
+          onClick={handleCheckout}
+        >
+          Ir a Checkout
+        </button>
+
+        <button
+          className="btn btn-error"
+          onClick={() => {
+            clearCart();
+            toast.success("Carrito eliminado correctamente");
+          }}
+        >
+          Vaciar Carrito
+        </button>
+      </div>
     </div>
   );
 }
