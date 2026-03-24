@@ -3,7 +3,6 @@ import ItemCount from "./ItemCount";
 function ItemDetail({ item }) {
   return (
     <div className="card lg:card-side !bg-pink-100 shadow-sm p-4 max-w-4xl mx-auto">
-      {/* Figura con imagen centrada y tamaño máximo */}
       <figure className="flex justify-center items-center p-4">
         <img
           src={item.thumbnail}

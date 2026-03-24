@@ -10,6 +10,11 @@ Este proyecto fue realizado como trabajo práctico para el curso de React Javasc
 
 La aplicación permite a los usuarios navegar entre diferentes categorías de productos relacionados con jardinería y naturaleza, visualizar información básica de cada producto y simular una compra.
 
+El usuario no podra finalizar su compra si el carrito se encuentra vacio.
+Asimismo, podra eliminar productos del carrito de manera individual o vaciar el carrito en su totalidad.
+Tampoco podra proseguir con su compra si no completa los campos correspondientes solicitados al realizar su checkout.
+Una vez finalizada su compra, se le brindara la ID de su orden de compra mediante una notificacion Toast y la misma se creara dentro de la base de datos de Firebase.
+
 La navegación está implementada como una **Single Page Application (SPA)**, lo que permite una experiencia fluida sin recargas completas de página, gracias al uso de React Router.
 
 Importante: este proyecto es únicamente con fines educativos y no realiza transacciones reales, es solo un simulador.
